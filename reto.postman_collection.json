@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "ca8bc863-2ac5-449b-a7f1-6fc96bf67f7e",
+		"name": "reto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "574659"
+	},
+	"item": [
+		{
+			"name": "libros",
+			"item": [
+				{
+					"name": "crear libros",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 2,\r\n    \"titulo\": \"El Quijote02\",\r\n    \"autor\": \"Miguel de Cervantes02\",\r\n    \"isbn\": \"123456789\",\r\n    \"fechaPublicacion\": \"1605-01-17\",\r\n    \"estado\": \"Disponible\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/libros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listado paginado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/libros?page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listado sin paginacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/libros/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estado de disponibilidad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/libros/1/disponible",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros",
+								"1",
+								"disponible"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busqueda por idlibro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/libros/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminacion de un libro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/libros/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar libro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"titulo\": \"El Quijote (Edición Actualizada)\",\r\n    \"autor\": \"Miguel de Cervantes\",\r\n    \"isbn\": \"123456789\",\r\n    \"fechaPublicacion\": \"1605-01-16\",\r\n    \"estado\": \"No disponible\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/libros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "autor",
+			"item": [
+				{
+					"name": "crear autor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Gabriel García Márquez01\",\r\n    \"nacionalidad\": \"Colombiano\",\r\n    \"fechaNacimiento\": \"1927-03-06\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listado autores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busqueda por idautor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/autores/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"autores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar autor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Gabriel García Márquez\",\r\n    \"nacionalidad\": \"Colombiano\",\r\n    \"fechaNacimiento\": \"1927-03-06\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar autor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/autores/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"autores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "prestamo",
+			"item": [
+				{
+					"name": "crear prestamo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaPrestamo\": \"2025-01-16\",\r\n    \"fechaDevolucion\": \"2025-01-23\",\r\n    \"estado\": \"Activo\",\r\n    \"libro\": {\r\n        \"id\": 1\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/prestamos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prestamos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listado prestamos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/prestamos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prestamos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busqueda de prestamo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/prestamos/libro/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prestamos",
+								"libro",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cambio de estado prestamo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/prestamos/1/finalizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prestamos",
+								"1",
+								"finalizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminacion de prestamo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/prestamos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prestamos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
