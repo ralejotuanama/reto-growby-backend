@@ -1,0 +1,17 @@
+
+services:
+  oracle-db:
+    image: gvenzl/oracle-xe
+    container_name: oracle-db
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: admin
+
+  reto-app:
+    build: .
+    container_name: reto-app
+    depends_on:
+      - oracle-db
+    ports:
+      - "8080:8080"
